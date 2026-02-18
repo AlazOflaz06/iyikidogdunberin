@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌎 Kilometreler Engel Değil</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        </div>
+    
+<script>
+    const flakes = document.querySelectorAll('.snowflake');
+    flakes.forEach((flake) => {
+        // Rastgele başlangıç pozisyonu ve boyut
+        flake.style.left = `${Math.random() * 100}vw`;
+        flake.style.fontSize = `${Math.random() * 1.5 + 0.5}em`;
+        
+        // Rastgele animasyon süresi ve gecikme
+        flake.style.animationDuration = `${Math.random() * 8 + 5}s`; // 5-13 saniye
+        flake.style.animationDelay = `-${Math.random() * 10}s`; // Gecikme ile hepsi aynı anda başlamaz
+        
+        // Rastgele yatay kayma (rüzgar efekti)
+        const kaymaX = Math.random() > 0.5 ? '50px' : '-50px';
+        flake.style.setProperty('--kayma-x', kaymaX);
+    });
+</script>
+    
+    <nav class="ana-menu">
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="galeri.html">📸 Galeri</a>
+        <a href="mesafe.html">🌎 Mesafe Kanıtı</a> 
+    </nav>
+    
+    <header>
+    </header>
+    <header>
+        <h2 class="ozel-baslik">🌎 Aramızdaki Mesafe: Sadece Bir Sayı</h2>
+        <p>Bizi ayıran coğrafya değil, bu bağın gücüdür önemli olan.</p>
+    </header>
+    
+    <div class="mesafe-konteyner">
+        
+        <div class="harita-alani">
+            <div class="harita-gorsel">
+                <div class="konum-noktasi sizin-nokta">
+                    <span class="etiket">Ankara (💖)</span>
+                </div>
+                <div class="konum-noktasi berin-nokta">
+                    <span class="etiket">Adıyaman (👑)</span>
+                </div>
+                <div class="baglanti-cizgisi"></div>
+            </div>
+        </div>
+
+        <div class="mesafe-bilgi-kart">
+            <h3>Gerçek Değer:</h3>
+            <p class="kilometre-sayi" data-km="760">760 KM</p>
+            <p>Bu 760 kilometre, dostluğumuzun sağlamlığını kanıtlayan bir mühürdür. Çünkü bu kadar uzakta olsak bile, aramızdaki her şey ilk günkü gibi güçlü ve saf kaldı.</p>
+            <p>**"Bizi ayıran tek şey ölüm olur"** sözümüzün arkasındayım. Mesafeler sadece haritada var. Kalplerimiz her zaman yan yana! ❤️</p>
+        </div>
+        
+    </div>
+
+    </body>
+</html>
