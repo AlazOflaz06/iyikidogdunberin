@@ -1,0 +1,501 @@
+/* Genel Stil */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4B0082; /* Koyu Mor/Çivit Mavi */
+    background: url('kar-tanesi-arka-plan.png') repeat, linear-gradient(to top, #FFC0CB, #E6E6FA); /* Pembe ve Lavanta Geçişi */
+    background-color: #E6E6FA; /* Lavanta */
+    text-align: center;
+}
+
+/* Menü Stili */
+.ana-menu {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.ana-menu a {
+    text-decoration: none;
+    color: #8A2BE2; /* Mavi-Mor */
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.ana-menu a:hover {
+    background-color: #FFC0CB; /* Açık Pembe */
+    color: white;
+}
+
+/* Başlık */
+h1, h2 {
+    color: #8A2BE2; 
+    text-shadow: 2px 2px #fff;
+}
+h1 {
+    font-size: 3em;
+    padding-top: 50px;
+}
+
+/* --- ANA SAYFA STİLİ --- */
+.sayac {
+    font-size: 2.5em;
+    color: #DDA0DD; /* Açık Mor */
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 3px dashed #8A2BE2;
+    margin: 30px 0;
+}
+
+.siteye-gir-butonu {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 50px;
+    background-color: #FF69B4; /* Sıcak Pembe */
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+.siteye-gir-butonu:hover {
+    background-color: #FF1493; /* Daha Koyu Pembe */
+    transform: scale(1.05);
+}
+
+/* --- GALERİ STİLİ --- */
+.galeri-konteyner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.foto-kart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Kalp şekli için farklı CSS gerek, şimdilik daire */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border: 10px solid #FF69B4; /* Kalp Çerçeve */
+    transition: all 0.5s;
+}
+
+.foto-kart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+}
+
+.foto-not {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 105, 180, 0.8); /* Yarı şeffaf pembe */
+    color: white;
+    padding: 10px 0;
+    font-weight: bold;
+    opacity: 0; /* Başlangıçta gizli */
+    transition: opacity 0.5s;
+}
+
+.foto-kart:hover {
+    transform: scale(1.05) rotate(-3deg);
+    border-color: #FFD700; /* Altın renginde ışık efekti */
+}
+.foto-kart:hover .foto-not {
+    opacity: 1; /* Üzerine gelince göster */
+}
+
+/* --- MESAJLAR STİLİ --- */
+.mesaj-kutusu {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: left;
+    line-height: 1.8;
+}
+
+.mesaj-kutusu p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #4B0082;
+}
+.mesaj-kutusu .imza {
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #FF69B4;
+}
+
+/* --- SÜRPRİZ SAYFA STİLİ --- */
+.surpriz-konteyner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.surpriz-butonu {
+    padding: 25px 50px;
+    background-color: #FFA07A; /* Açık Somon */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+.surpriz-butonu:hover {
+    background-color: #FF7F50; /* Mercan */
+    transform: translateY(-3px);
+}
+
+.gizli {
+    display: none;
+}
+
+.mesaj-animasyon {
+    font-size: 2.5em;
+    color: #FF1493;
+    font-weight: bolder;
+    margin-top: 40px;
+    /* Animasyon için buraya CSS keyframe eklenebilir */
+    animation: renk-degisimi 2s infinite alternate;
+}
+.uyari-mesaji {
+    font-size: 1.2em;
+    color: #6A5ACD;
+    margin-bottom: 20px;
+}
+
+/* Örnek Animasyon (Sürpriz Sayfası) */
+@keyframes renk-degisimi {
+    from {
+        color: #FF1493;
+        transform: scale(1);
+    }
+    to {
+        color: #FFD700;
+        transform: scale(1.1);
+    }
+}
+/* ====================================
+   ❄️ KAR TANESİ EFEKTİ
+   ==================================== */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* En üstte görünmesini sağlar */
+}
+
+/* Her bir kar tanesi (div) için stil */
+.snowflake {
+    color: white;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: -10px; /* Ekranın üstünden başlar */
+    animation: kar-yagisi linear infinite;
+    text-shadow: 0 0 2px #ffc0cb; /* Hafif pembe parlama */
+}
+
+/* Kar Yağışı Animasyonu Tanımı */
+@keyframes kar-yagisi {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(var(--kayma-x), 105vh, 0); /* Ekran yüksekliğinin biraz altına iner */
+        opacity: 0.5;
+    }
+        }
+/* ====================================
+   🌎 MESAFE KANITI SAYFASI STİLİ
+   ==================================== */
+
+.mesafe-konteyner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.harita-alani {
+    width: 100%;
+    height: 400px; /* Haritanın yüksekliği */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6E6FA; /* Lavanta arka planı */
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #DDA0DD;
+}
+
+.harita-gorsel {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    /* Buraya sembolik bir dünya haritası resmi eklenebilir, şimdilik sadece noktalar olsun */
+}
+
+/* Nokta Stili */
+.konum-noktasi {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FF69B4;
+    z-index: 2;
+    animation: nabiz 1.5s infinite alternate; /* Canlı nabız efekti */
+}
+
+.sizin-nokta {
+    background-color: #FF1493; /* Koyu Pembe */
+    left: 10%;
+    top: 30%;
+}
+
+.elizan-nokta {
+    background-color: #8A2BE2; /* Mor */
+    right: 15%;
+    bottom: 25%;
+}
+
+/* Etiketler */
+.etiket {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #4B0082;
+}
+
+/* Bağlantı Çizgisi */
+.baglanti-cizgisi {
+    position: absolute;
+    left: 25%; /* Sizin noktadan başla */
+    top: 45%; 
+    width: 50%; /* Çizginin uzunluğu */
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        #FF69B4, 
+        #FF69B4 10px,
+        transparent 10px,
+        transparent 20px
+    ); /* Kesik Kesik Çizgi efekti */
+    z-index: 1;
+    animation: cizgi-parlama 2s infinite alternate;
+}
+
+/* Kilometre Sayısı Kartı */
+.mesafe-bilgi-kart {
+    background-color: #fff;
+    padding: 25px 40px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    border-left: 5px solid #FF1493;
+}
+
+.kilometre-sayi {
+    font-size: 3em;
+    font-weight: 900;
+    color: #8A2BE2;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px #DDA0DD;
+}
+
+/* Animasyonlar */
+@keyframes nabiz {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.3); opacity: 0.8; }
+}
+@keyframes cizgi-parlama {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* Mobil Uyumlu Konumlandırma */
+@media screen and (max-width: 600px) {
+    .sizin-nokta {
+        left: 5%;
+        top: 20%;
+    }
+    .elizan-nokta {
+        right: 5%;
+        bottom: 70%;
+    }
+    .baglanti-cizgisi {
+        /* Mobil için çizgiyi elle ayarlamak zor, bu yüzden basit bir şekilde gizleyebiliriz veya ayarlayabiliriz */
+        width: 0; 
+        height: 0;
+    }
+    .mesafe-bilgi-kart {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* ====================================
+   📜 KALPLER ARŞİVİ (ACCORDION) STİLİ
+   ==================================== */
+.mektup-konteyner {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.accordion-baslik {
+    background-color: #DDA0DD; /* Mor Başlık */
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s ease;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.accordion-baslik:hover {
+    background-color: #8A2BE2; /* Koyu Mor Hover */
+}
+
+.accordion-baslik.aktif-mektup {
+    background-color: #FF69B4; /* Açık Pembe Aktif */
+}
+
+/* İçerik (Mesaj Kutusu) */
+.accordion-icerik {
+    padding: 0 18px;
+    background-color: #fff;
+    max-height: 0; /* Başlangıçta gizli */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Yumuşak açılma animasyonu */
+    border-left: 5px solid #FFC0CB;
+    border-right: 5px solid #FFC0CB;
+    border-bottom: 5px solid #FFC0CB;
+    border-radius: 0 0 8px 8px;
+}
+
+.accordion-icerik p {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    margin: 15px 0;
+    color: #4B0082;
+    text-indent: 20px; /* Paragraf başı girintisi */
+}
+
+.accordion-icerik p:first-child {
+    margin-top: 25px;
+    font-weight: bold;
+}
+/* ====================================
+   👑 ANA BAŞLIK ANİMASYONU STİLİ
+   ==================================== */
+
+.ozel-dogum-gunu-basligi {
+    text-align: center;
+    padding: 40px 20px 20px; /* Alttan boşluk menü için */
+    background: linear-gradient(135deg, #e6a8e6, #f0c3f0); /* Hafif degrade arka plan */
+    border-bottom: 5px solid #DDA0DD;
+}
+
+.animasyonlu-yazi {
+    font-family: 'Georgia', serif; /* Şık bir font seçimi */
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    
+    /* Animasyonlu Renk ve Gölge */
+    animation: renkDegistir 5s infinite alternate, parlama 2s infinite;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.7); /* Yumuşak pembe parlama */
+}
+
+.alt-yazi {
+    font-size: 1.2em;
+    color: #4B0082; /* Koyu mor */
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ------------------------------------
+   @keyframes (Animasyonlar)
+   ------------------------------------ */
+
+/* Yazının yavaşça renk değiştirmesi */
+@keyframes renkDegistir {
+    0% { color: #8A2BE2; } /* Mor */
+    50% { color: #FF69B4; } /* Sıcak Pembe */
+    100% { color: #DDA0DD; } /* Lavanta Moru */
+}
+
+/* Yazının hafifçe parlayıp sönmesi */
+@keyframes parlama {
+    0% { text-shadow: 0 0 5px rgba(255, 105, 180, 0.5); }
+    100% { text-shadow: 0 0 15px rgba(255, 105, 180, 0.9); }
+}
+
+/* --- ANA MENÜ DÜZENLEMESİ (Baştan yazdıysan bu kısım çalışacaktır) --- */
+.ana-menu {
+    text-align: center;
+    background-color: #4B0082; /* Koyu Mor zemin */
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ana-menu a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.ana-menu a:hover {
+    background-color: #FF69B4; /* Hover'da pembe */
+}
