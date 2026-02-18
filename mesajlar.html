@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Kalpten Gelen Mesaj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        </div>
+    <nav class="ana-menu">
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="galeri.html">📸 Galeri</a>
+        <a href="mesafe.html">🌎 Mesafe Kanıtı</a>
+    </nav>
+    
+    <header>
+    </header>
+    
+<script>
+    const flakes = document.querySelectorAll('.snowflake');
+    flakes.forEach((flake) => {
+        // Rastgele başlangıç pozisyonu ve boyut
+        flake.style.left = `${Math.random() * 100}vw`;
+        flake.style.fontSize = `${Math.random() * 1.5 + 0.5}em`;
+        
+        // Rastgele animasyon süresi ve gecikme
+        flake.style.animationDuration = `${Math.random() * 8 + 5}s`; // 5-13 saniye
+        flake.style.animationDelay = `-${Math.random() * 10}s`; // Gecikme ile hepsi aynı anda başlamaz
+        
+        // Rastgele yatay kayma (rüzgar efekti)
+        const kaymaX = Math.random() > 0.5 ? '50px' : '-50px';
+        flake.style.setProperty('--kayma-x', kaymaX);
+    });
+</script>
+    
+    <nav class="ana-menu">
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="galeri.html">📸 Galeri</a>
+    </nav>
+    
+    <header>
+        <h2>💌 Senin İçin Özel Bir Not...</h2>
+    </header>
+    
+    <div class="mesaj-kutusu">
+        <p>Berin, seninle tanışalı neredeyse 4 sene oldu ama bu uzun süre içinde biraz kısa arkadaşlığımız oldu fakat sen bana bu dostluk içinde arkadaşlığı, kardeşliği, her şeyi öğrettin. Kötü günümde yanımda oldun, hep destekledin, asla bırakmadın. Bağımız asla kopmadı.</p>
+        <p>Sanalda ilk tanıştığımız zamanlar senin ex yüzünden kavgalıydık hatta onun yüzünden engellemiştin beni ama engeli kaldırdıktan sonra böyle iyi dost olucamızı düşünmemiştim Kısa süreli de olsa senin yanında mutlu oluyordum, saçmalıyordum ama gerçekten bana iyi geliyordu. Seninle konuşmak bana o kadar iyi geliyordu ki...</p>
+        <p>Ama şimdi uzaktasın, aramızda bir sürü kilometreler var. Fakat bu asla seni bırakacağım anlamına gelmez. Her ne olursa olsun ömrümün sonuna kadar yanında olacağım. Bizi ayıran tek şey ölüm olur, buna emin ol.</p>
+        <p>Çok fazla anımız yok, özür dilerim. Daha iyisini yapmak isterdim ama şu anlık elimden maalesef bu geliyor. Seni çok seviyorum **BERİN**! İyi ki varsın, iyi ki doğdun. Doğum günün kutlu olsun. Nice mutlu, bizli, beraber senelerimize inşallah! ❤️‍🩹</p>
+        <p class="imza">- Alaz Oflaz</p>
+    </div>
+</body>
+</html>
