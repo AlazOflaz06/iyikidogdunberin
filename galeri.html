@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📸 Büyülü Anılarımız</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        <div class="snowflake">❄️</div>
+        <div class="snowflake">💖</div>
+        <div class="snowflake">✨</div>
+        </div>
+    <nav class="ana-menu">
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="galeri.html">📸 Galeri</a>
+        <a href="mesajlar.html">💌 Kısa Mesajlar</a>
+        <a href="surpriz.html">🎈 Sürpriz</a>
+        
+        <a href="mesafe.html">🌎 Mesafe Kanıtı</a> 
+        <a href="mektuplar.html">📜 Kalp Arşivi</a> 
+    </nav>
+    
+    <header>
+    </header>
+<script>
+    const flakes = document.querySelectorAll('.snowflake');
+    flakes.forEach((flake) => {
+        // Rastgele başlangıç pozisyonu ve boyut
+        flake.style.left = `${Math.random() * 100}vw`;
+        flake.style.fontSize = `${Math.random() * 1.5 + 0.5}em`;
+        
+        // Rastgele animasyon süresi ve gecikme
+        flake.style.animationDuration = `${Math.random() * 8 + 5}s`; // 5-13 saniye
+        flake.style.animationDelay = `-${Math.random() * 10}s`; // Gecikme ile hepsi aynı anda başlamaz
+        
+        // Rastgele yatay kayma (rüzgar efekti)
+        const kaymaX = Math.random() > 0.5 ? '50px' : '-50px';
+        flake.style.setProperty('--kayma-x', kaymaX);
+    });
+</script>
+    
+    <nav class="ana-menu">
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="mesajlar.html">💌 Mesajlar</a>
+        <a href="surpriz.html">🎁 Sürpriz</a>
+    </nav>
+    
+    <header>
+        <h2>📸 Nadide Eser Koleksiyonu</h2>
+    </header>
+    
+    <div class="galeri-konteyner">
+        <div class="foto-kart">
+            <img src="foto1.jpg" alt="Berin'in fotoğrafı 1">
+            <span class="foto-not">✨ Çok güzelsin Berin ✨</span>
+        </div>
+        
+        <div class="foto-kart">
+            <img src="foto2.jpg" alt="Berin'in fotoğrafı 2">
+            <span class="foto-not">Nadide Bir Parçasın 💖</span>
+        </div>
+        
+        <div class="foto-kart">
+            <img src="foto3.jpg" alt="Berin'in fotoğrafı 3">
+            <span class="foto-not">Dünyanın 1. Harikası 😄</span>
+        </div>
+        
+        </div>
+</body>
+</html>
